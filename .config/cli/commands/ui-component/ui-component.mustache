@@ -1,0 +1,15 @@
+import React from 'react';
+
+export interface {{{ NAME.PASCAL }}}Props {
+  children?: React.ReactNode;
+  dataTestId?: string;
+}
+
+export const {{{ NAME.PASCAL }}} = ({
+  children,
+  dataTestId = '{{{ NAME.KEBAB }}}',
+}: {{{ NAME.PASCAL }}}Props) => (
+  <div data-testid={dataTestId}>
+    {children}
+  </div>
+);
