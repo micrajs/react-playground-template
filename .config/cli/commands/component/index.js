@@ -1,6 +1,6 @@
 const UIComponent = {
-  command: 'make:ui-component',
-  description: 'Generate a new UI component',
+  command: 'make:component',
+  description: 'Generate a new component',
   arguments: [
     {
       name: 'name',
@@ -33,7 +33,7 @@ const UIComponent = {
       const NAME = variationsOf(RAW_NAME);
       const FILES = [
         // [PATH, TEMPLATE]
-        [src(RAW_PATH, NAME.PASCAL, `index.tsx`), template('ui-component')],
+        [src(RAW_PATH, NAME.PASCAL, `index.tsx`), template('component')],
       ];
 
       // Generate files

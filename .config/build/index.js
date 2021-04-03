@@ -1,5 +1,3 @@
 const { buildWeb } = require('./web');
 
-Promise.all([
-  buildWeb(),
-]);
+Promise.all([buildWeb()]);

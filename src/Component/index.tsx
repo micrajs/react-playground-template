@@ -5,10 +5,6 @@ export interface ComponentProps {
   dataTestId?: string;
 }
 
-export const Component = ({
-  dataTestId = 'component',
-}: ComponentProps) => (
-  <h1 data-testid={dataTestId}>
-    My test component
-  </h1>
+export const Component = ({ dataTestId = 'component' }: ComponentProps) => (
+  <h1 data-testid={dataTestId}>My test component</h1>
 );

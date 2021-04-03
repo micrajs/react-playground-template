@@ -3,9 +3,11 @@ const { cwd } = require('./.config/utilities');
 module.exports = {
   providers: [require('./.config/cli/service-providers/PathsServiceProvider')],
   commands: [
+    require('./.config/cli/commands/component'),
     require('./.config/cli/commands/ui-component'),
   ],
   template: {
+    'component': cwd('.config/cli/commands/component/component.mustache'),
     'ui-component': cwd('.config/cli/commands/ui-component/ui-component.mustache'),
   },
   paths: {
