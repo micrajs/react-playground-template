@@ -2,5 +2,5 @@
   "watch": ["src"],
   "ext": "ts, tsx",
   "ignore": [".test.ts"],
-  "exec": "yarn type:check & (yarn build:dev && yarn serve:dev)"
+  "exec": "yarn type:check & (yarn build:dev && NODE_ENV=development serve -s .micra -p 1234)"
 }
