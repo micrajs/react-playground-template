@@ -1,6 +1,6 @@
 module.exports = {
   transform: {
-    '^.+\\.(t|j)sx?$': 'esbuild-jest',
+    '^.+\\.(t|j)sx?$': 'ts-jest',
     '^.+.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
   },
   moduleNameMapper: {
