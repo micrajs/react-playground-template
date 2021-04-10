@@ -20,7 +20,7 @@ export const use{{{ NAME.PASCAL }}} = (
 
 export const {{{ NAME.PASCAL }}}UI = ({
   children,
-  dataTestId = 'my-connected-component',
+  dataTestId = '{{{ NAME.KEBAB }}}',
 }: {{{ NAME.PASCAL }}}Props) => (
   <div data-testid={dataTestId}>
     {children}
@@ -28,4 +28,3 @@ export const {{{ NAME.PASCAL }}}UI = ({
 );
 
 export const {{{ NAME.PASCAL }}} = connect(use{{{ NAME.PASCAL }}}, {{{ NAME.PASCAL }}}UI);
-

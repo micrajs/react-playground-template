@@ -1,0 +1,16 @@
+import React from 'react';
+import { connect } from '@/helpers/connect';
+import { {{{ NAME.PASCAL }}}Wrapper } from '@/{{{ NAME.PASCAL }}}/styles';
+import { use{{{ NAME.PASCAL }}} } from '@/{{{ NAME.PASCAL }}}/use{{{ NAME.PASCAL }}}';
+import type { {{{ NAME.PASCAL }}}Props } from '@/{{{ NAME.PASCAL }}}/types';
+
+export const {{{ NAME.PASCAL }}}UI = ({
+  children,
+  dataTestId = '{{{ NAME.KEBAB }}}',
+}: {{{ NAME.PASCAL }}}Props) => (
+  <{{{ NAME.PASCAL }}}Wrapper data-testid={dataTestId}>
+    {children}
+  </{{{ NAME.PASCAL }}}Wrapper>
+);
+
+export const {{{ NAME.PASCAL }}} = connect(use{{{ NAME.PASCAL }}}, {{{ NAME.PASCAL }}}UI);

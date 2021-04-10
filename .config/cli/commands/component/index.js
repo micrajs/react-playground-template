@@ -20,6 +20,12 @@ const UIComponent = {
       description: 'Should overwrite file if it exists',
       default: false,
     },
+    {
+      name: 'single-file-component',
+      alias: 'sfc',
+      description: 'Should create a single file component',
+      default: false,
+    },
   ],
   async handler({ createFile, parser, template, variationsOf, defaultVariables }) {
     try {
@@ -28,12 +34,20 @@ const UIComponent = {
       const RAW_NAME = parser.getArgument(0).value;
       const RAW_PATH = parser.getArgument(1).value;
       const FORCE = parser.getOption('force').value;
+      const SFC = parser.getOption('single-file-component').value;
 
       // Definition
       const NAME = variationsOf(RAW_NAME);
       const FILES = [
         // [PATH, TEMPLATE]
-        [src(RAW_PATH, NAME.PASCAL, `index.tsx`), template('component')],
+        ...(SFC
+          ? [[src(RAW_PATH, NAME.PASCAL, `index.tsx`), template('component.sfc')]]
+          : [
+              [src(RAW_PATH, NAME.PASCAL, `index.tsx`), template('component.index')],
+              [src(RAW_PATH, NAME.PASCAL, `use${NAME.PASCAL}.tsx`), template('component.setup-hook')],
+              [src(RAW_PATH, NAME.PASCAL, `styles.tsx`), template('component.styles')],
+              [src(RAW_PATH, NAME.PASCAL, `types.tsx`), template('component.types')],
+            ]),
       ];
 
       // Generate files
