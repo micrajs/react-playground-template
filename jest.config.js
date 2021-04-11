@@ -7,7 +7,7 @@ module.exports = {
     '\\.css$': '<rootDir>/EmptyModule.js',
   },
   runner: 'groups',
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   testRegex: 'src(/tests/|/.*/tests/).*\\.test\\.tsx?$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   setupFilesAfterEnv: ['<rootDir>/.config/testing/setup.ts'],

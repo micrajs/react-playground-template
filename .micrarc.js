@@ -5,6 +5,7 @@ module.exports = {
   commands: [
     require('./.config/cli/commands/component'),
     require('./.config/cli/commands/ui-component'),
+    require('./.config/cli/commands/helper'),
   ],
   template: {
     component: {
@@ -15,6 +16,7 @@ module.exports = {
       'types': cwd('.config/cli/commands/component/templates/types.mustache'),
     },
     'ui-component': cwd('.config/cli/commands/ui-component/ui-component.mustache'),
+    'helper': cwd('.config/cli/commands/helper/helper.mustache'),
   },
   paths: {
     src: cwd('src'),
